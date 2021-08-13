@@ -15,8 +15,9 @@ function fetchPokemon(){
 }
 
 function fetchPokemonData(pokemon){
+    console.log(fetchPokemon);
     let url = pokemon.url // <--- this is saving the pokemon url to a variable to use in the fetch. 
-                                //Example: https://pokeapi.co/api/v2/pokemon/1/"
+
     fetch(url)
     .then(response => response.json())
     .then(function(pokemonData){
@@ -25,7 +26,6 @@ function fetchPokemonData(pokemon){
 }
 
 function renderPokemon(pokemonData){
-    console.log(pokemonData)
 
 
     let allPokemonContainer = document.getElementById('pokemon-container');
@@ -79,13 +79,13 @@ function createpokemonImage(pokemonID, containerDiv){
     containerDiv.append(pokemonImageContainer);
 }
 
+
 // !!! this is just a placeholder and needs to be changed once nav-bar is rendered. This is what makes the pokemon load when clicked. 
 
 document.addEventListener("DOMContentLoaded", () =>{
-
-    const locationNav = document.querySelector('.pika-icon');
-    locationNav.addEventListener('click', render)
-})
+     const locationNav = document.querySelector('.pika-icon');
+     locationNav.addEventListener('click', render)
+ })
 
 
 
