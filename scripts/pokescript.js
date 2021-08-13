@@ -79,5 +79,13 @@ function createpokemonImage(pokemonID, containerDiv){
     containerDiv.append(pokemonImageContainer);
 }
 
-render();
+// !!! this is just a placeholder and needs to be changed once nav-bar is rendered. This is what makes the pokemon load when clicked. 
+
+document.addEventListener("DOMContentLoaded", () =>{
+
+    const locationNav = document.querySelector('.pika-icon');
+    locationNav.addEventListener('click', render)
+})
+
+
 
