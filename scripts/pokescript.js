@@ -5,7 +5,7 @@ function render(){
 }
 
 function fetchPokemon(){
-    fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
+    fetch('https://pokeapi.co/api/v2/pokemon?limit=6') // change to 151 to get more once you figure out how to array
     .then(response => response.json())
     .then(function(allpokemon){
         allpokemon.results.forEach(function(pokemon){
@@ -25,6 +25,9 @@ function fetchPokemonData(pokemon){
 }
 
 function renderPokemon(pokemonData){
+    console.log(pokemonData)
+
+
     let allPokemonContainer = document.getElementById('pokemon-container');
     let pokemonContainer = document.createElement("div")
     pokemonContainer.classList.add('ui', 'card');
