@@ -4,6 +4,7 @@ function render(){
     fetchPokemon();
 }
 
+
 function fetchPokemon(){
     fetch(`https://pokeapi.co/api/v2/pokemon?limit=151`) // change to 151 to get more once you figure out how to array
     .then(response => response.json())

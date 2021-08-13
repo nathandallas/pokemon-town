@@ -6,16 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Towns Page</title>
     <link rel="stylesheet" href="../styles/town-styles.css">
+    <link rel="stylesheet" href="../styles/stylesheet.css">
 </head>
 <body>
     <header id="towns-header">
         <nav>
             <section class="nav-bar">
-                <a href="./index.html"><img class="pika-icon" src="assets\images\icons\pika-icon.svg" alt="pika icon"></a>
-            <article class="nav-barlinks--box">
-                <a href='./index.html'><p class="nav-barlinks">towns</p></a>
-                <a href='./index.html'><p class="nav-barlinks">area of interest</p></a>
-                <a href='./index.html'><p class="nav-barlinks">pokédex</p></a>
+            <a href="./index.html"><img class="pika-icon" src="assets\images\icons\pika-icon.svg" alt="pika icon"></a>
+            <article class="nav-bar__links--box">
+                <a href='./index.html'><p class="nav-bar__links">towns</p></a>
+                <a href='./index.html'><p class="nav-bar__links">pokédex</p></a>
+            </article>
+            <article class="sub-bar__box">
+                <input type="button" value="pallet town" id="sub-bar" class="pallet-town" >
+                <input type="button" value="viridian city" id="sub-bar" class="viridian-city" >
+                <input type="button" value="pewter city" id="sub-bar" class="pewter-city" >
+                <input type="button" value="cerulean city" id="sub-bar" class="cerulean-city" >
             </article>
             </section>
         </nav>
@@ -29,7 +35,10 @@
                 <h2 class="title-text">PALLET TOWN</h2>
             </div>
             <div class="cards__container">
-                <!-- Pokemon cards -->
+                <div id="container">
+                    <div id="pokemon-container" class="ui cards">
+                    </div>
+                </div>
             </div>
             
 
