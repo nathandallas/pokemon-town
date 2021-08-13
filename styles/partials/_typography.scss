@@ -11,3 +11,9 @@
         url('../../assets/fonts/FuturaStd-Bold.woff') format('woff');
     font-weight: 600;
 }
+
+@mixin links {
+    font-weight: 300;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}

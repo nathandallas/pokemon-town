@@ -1,30 +1,93 @@
-function render(){
+// function render(){
+//     let allPokemonContainer = document.querySelector('#pokemon-container')
+//     allPokemonContainer.innerText = "";
+//     fetchPokemon();
+// }
+
+function palletTownRender(){
     let allPokemonContainer = document.querySelector('#pokemon-container')
     allPokemonContainer.innerText = "";
-    fetchPokemon();
+
+    fetchPalletPokemon();
 }
+function viridianCityRender(){
+    let allPokemonContainer = document.querySelector('#pokemon-container')
+    allPokemonContainer.innerText = "";
 
-const town1 = document.querySelector(".pallet-town")
-const town2 = document.querySelector(".viridian-city")
-const town3 = document.querySelector(".pewter-city")
-const town4 = document.querySelector(".cerulean-city")
+    fetchViridianPokemon();
+}
+function ceruleanCityRender(){
+    let allPokemonContainer = document.querySelector('#pokemon-container')
+    allPokemonContainer.innerText = "";
+
+    fetchCeruleanPokemon();
+}
+function pewterCityRender(){
+    let allPokemonContainer = document.querySelector('#pokemon-container')
+    allPokemonContainer.innerText = "";
+
+    fetchPewterPokemon();
+}
+ 
 // ${identifier.value}
+//https://pokeapi.co/api/v2/pokemon/${pokemonID}/
+//https://pokeapi.co/api/v2/pokemon?limit=151
 
-function fetchPokemon(){
-    fetch(`https://pokeapi.co/api/v2/pokemon?limit=151`) // change to 151 to get more once you figure out how to array
+
+function fetchPalletPokemon(){
+    fetch(`https://pokeapi.co/api/v2/pokemon?limit=151`)
     .then(response => response.json())
     .then(function(allpokemon){
-        console.log(allpokemon)
-        allpokemon.results.forEach(function(pokemon){
+
+        let palletArr = [allpokemon.results[0],allpokemon.results[3], allpokemon.results[6],allpokemon.results[12], allpokemon.results[19],allpokemon.results[21]];
+
+        palletArr.forEach(function(pokemon){
+            fetchPokemonData(pokemon);
+        })
+    })
+}
+function fetchViridianPokemon(){
+    fetch(`https://pokeapi.co/api/v2/pokemon?limit=151`)
+    .then(response => response.json())
+    .then(function(allpokemon){
+
+        let viridianArr = [allpokemon.results[13],allpokemon.results[15], allpokemon.results[9],allpokemon.results[10], allpokemon.results[14],allpokemon.results[11]];
+
+        viridianArr.forEach(function(pokemon){
+            fetchPokemonData(pokemon);
+        })
+    })
+}
+function fetchCeruleanPokemon(){
+    fetch(`https://pokeapi.co/api/v2/pokemon?limit=151`)
+    .then(response => response.json())
+    .then(function(allpokemon){
+
+        let ceruleanArr = [allpokemon.results[128],allpokemon.results[97], allpokemon.results[119],allpokemon.results[115], allpokemon.results[53],allpokemon.results[78]];
+
+        ceruleanArr.forEach(function(pokemon){
+            fetchPokemonData(pokemon);
+        })
+    })
+}
+function fetchPewterPokemon(){
+    fetch(`https://pokeapi.co/api/v2/pokemon?limit=151`)
+    .then(response => response.json())
+    .then(function(allpokemon){
+
+        let pewterArr = [allpokemon.results[34],allpokemon.results[50], allpokemon.results[28],allpokemon.results[31], allpokemon.results[43],allpokemon.results[77]];
+
+        pewterArr.forEach(function(pokemon){
             fetchPokemonData(pokemon);
         })
     })
 }
 
-function fetchPokemonData(pokemon){
-    console.log(fetchPokemon);
-    let url = pokemon.url // <--- this is saving the pokemon url to a variable to use in the fetch. 
 
+
+
+function fetchPokemonData(pokemon){
+    let url = pokemon.url // <--- this is saving the pokemon url to a variable to use in the fetch. 
     fetch(url)
     .then(response => response.json())
     .then(function(pokemonData){
@@ -87,23 +150,25 @@ function createpokemonImage(pokemonID, containerDiv){
 }
 
 
-// !!! this is just a placeholder and needs to be changed once nav-bar is rendered. This is what makes the pokemon load when clicked. 
+
+
+
 
 document.addEventListener("DOMContentLoaded", () =>{
      const locationNav = document.querySelector('.pallet-town');
-     locationNav.addEventListener('click', render)
+     locationNav.addEventListener('click', palletTownRender)
  })
 document.addEventListener("DOMContentLoaded", () =>{
      const locationNav = document.querySelector('.viridian-city');
-     locationNav.addEventListener('click', render)
+     locationNav.addEventListener('click', viridianCityRender)
  })
 document.addEventListener("DOMContentLoaded", () =>{
      const locationNav = document.querySelector('.pewter-city');
-     locationNav.addEventListener('click', render)
+     locationNav.addEventListener('click', pewterCityRender)
  })
 document.addEventListener("DOMContentLoaded", () =>{
      const locationNav = document.querySelector('.cerulean-city');
-     locationNav.addEventListener('click', render)
+     locationNav.addEventListener('click', ceruleanCityRender)
  })
 
 

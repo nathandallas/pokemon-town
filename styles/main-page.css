@@ -1,0 +1,50 @@
+@font-face {
+  font-family: "Futura Std";
+  src: url("../../assets/fonts/FuturaStd-Book.woff2") format("woff2"), url("../../assets/fonts/FuturaStd-Book.woff") format("woff");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Futura Std";
+  src: url("../../assets/fonts/FuturaStd-Bold.woff2") format("woff2"), url("../../assets/fonts/FuturaStd-Bold.woff") format("woff");
+  font-weight: 600;
+}
+.nav-bar {
+  font-family: "Futura Std";
+  font-weight: 500;
+  background-color: #DE1F26;
+  padding: 2rem;
+  display: flex;
+}
+.nav-bar__links {
+  font-weight: 300;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 1rem 1.75rem;
+}
+.nav-bar__links--box {
+  display: flex;
+  width: 75%;
+}
+
+a:link {
+  text-decoration: none;
+  color: #fff;
+}
+
+a:visited {
+  text-decoration: none;
+  color: #fff;
+}
+
+a:hover {
+  border-bottom: 0.25rem solid #fff;
+}
+
+.map {
+  width: 100%;
+  height: 25%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}/*# sourceMappingURL=main-page.css.map */
