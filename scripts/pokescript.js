@@ -4,10 +4,17 @@ function render(){
     fetchPokemon();
 }
 
+const town1 = document.querySelector(".pallet-town")
+const town2 = document.querySelector(".viridian-city")
+const town3 = document.querySelector(".pewter-city")
+const town4 = document.querySelector(".cerulean-city")
+// ${identifier.value}
+
 function fetchPokemon(){
-    fetch('https://pokeapi.co/api/v2/pokemon?limit=6') // change to 151 to get more once you figure out how to array
+    fetch(`https://pokeapi.co/api/v2/pokemon?limit=151`) // change to 151 to get more once you figure out how to array
     .then(response => response.json())
     .then(function(allpokemon){
+        console.log(allpokemon)
         allpokemon.results.forEach(function(pokemon){
             fetchPokemonData(pokemon);
         })
@@ -83,7 +90,19 @@ function createpokemonImage(pokemonID, containerDiv){
 // !!! this is just a placeholder and needs to be changed once nav-bar is rendered. This is what makes the pokemon load when clicked. 
 
 document.addEventListener("DOMContentLoaded", () =>{
-     const locationNav = document.querySelector('.pika-icon');
+     const locationNav = document.querySelector('.pallet-town');
+     locationNav.addEventListener('click', render)
+ })
+document.addEventListener("DOMContentLoaded", () =>{
+     const locationNav = document.querySelector('.viridian-city');
+     locationNav.addEventListener('click', render)
+ })
+document.addEventListener("DOMContentLoaded", () =>{
+     const locationNav = document.querySelector('.pewter-city');
+     locationNav.addEventListener('click', render)
+ })
+document.addEventListener("DOMContentLoaded", () =>{
+     const locationNav = document.querySelector('.cerulean-city');
      locationNav.addEventListener('click', render)
  })
 
