@@ -9,7 +9,7 @@
   font-weight: 600;
 }
 #container {
-  background-color: #F0543D;
+  background: linear-gradient(0deg, #de1f26, #e02628, #e12c2a, #e3312c, #e5372e, #e63b30, #e84032, #ea4434, #eb4836, #ed4c39, #ee503b, #f0543d);
 }
 
 .container {
@@ -32,10 +32,11 @@
 #pokedex-container {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
+  width: 80%;
   justify-content: space-between;
   background: linear-gradient(0deg, #de1f26, #e02628, #e12c2a, #e3312c, #e5372e, #e63b30, #e84032, #ea4434, #eb4836, #ed4c39, #ee503b, #f0543d);
   padding: 4rem;
+  margin: 0 auto;
 }
 
 .card {
