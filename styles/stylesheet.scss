@@ -1,24 +1,26 @@
 @use 'partials/typography' as *;
 @use 'partials/partial' as *;
 @use 'partials/mixins' as *;
-
+@use 'partials/pokedex';
+@use 'town-styles';
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+h1, h2, h3, p, link, ul, li{
+    font-family: "futura std";
+}
 .pika-icon {
     width: 3rem;
 }
 
-
-
 #pokemon-container {
     display: flex;
     flex-wrap: wrap;
-    width: 60vw;
     justify-content: space-between;
+    background-color: $poke-site-orange;
     background: linear-gradient(0deg, #de1f26, #e02628, #e12c2a, #e3312c, #e5372e, #e63b30, #e84032, #ea4434, #eb4836, #ed4c39, #ee503b, #f0543d);
 }
 
@@ -28,23 +30,20 @@
     align-items: center;
     width: 25%;
     font-family: 'Futura Std';
-    background: linear-gradient(0deg, #49669c, #436da2, #3d74a7, #377bab, #3181af, #2d88b2, #298eb4, #2995b6, #2b9bb7, #30a1b8, #37a7b8, #40adb8);
+    background-color: $poke-site-blue;
     margin: 1rem;
     position: relative;
-    border-radius: 1rem 0 1rem 1rem;
-    -webkit-box-shadow: 4px 3px 9px 4px rgba(0,0,0,0.2); 
-    box-shadow: 4px 3px 9px 4px rgba(0,0,0,0.2);
 
     &__name {
         text-transform: uppercase;
-        font-size: 1.5rem;
+        font-size: 2.25rem;
         font-weight: 500;
         color: #fff;
     }
     &__id {
         background-color: $poke-site-yellow;
-        font-size: 1.5rem;
         color: #fff;
+        font-size: 1.5rem;
         width: 2.5rem;
         height: 2.5rem;
         display: flex;
@@ -61,7 +60,7 @@
         color: $poke-site-yellow;
     }
     &__li {
-        margin: .5rem;
+        margin: 0 1rem 1rem 0;
         text-transform: uppercase;
         text-align: center;
     }

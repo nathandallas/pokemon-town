@@ -83,8 +83,11 @@ flex-direction: row;
    
 
     .title__container{
-        background-color: #000;
-        color:#fff;
+        text-align: center;
+        background: linear-gradient(0deg, #49669c, #436da2, #3d74a7, #377bab, #3181af, #2d88b2, #298eb4, #2995b6, #2b9bb7, #30a1b8, #37a7b8, #40adb8);
+        color: #fff;
+        width: 50%;
+        border-radius: 3rem;
         display: flex;
         justify-content: flex-end;
         align-items:center;
@@ -93,12 +96,12 @@ flex-direction: row;
         padding:1.3rem;
         .title-text{
             @include town-title;
+            text-align: center;
         }
     }
     .cards__container{
         background-color: #F0543D;
-        border:1px solid white;
-        width:37rem;
+        width:60rem;
         height:28rem;
         margin:1rem;
     }

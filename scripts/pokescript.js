@@ -5,24 +5,32 @@
 // }
 
 function palletTownRender(){
+    let title = document.querySelector('.title-text')
+    title.innerText="PALLET TOWN"
     let allPokemonContainer = document.querySelector('#pokemon-container')
     allPokemonContainer.innerText = "";
 
     fetchPalletPokemon();
 }
 function viridianCityRender(){
+    let title = document.querySelector('.title-text')
+    title.innerText="VIRIDIAN CITY"
     let allPokemonContainer = document.querySelector('#pokemon-container')
     allPokemonContainer.innerText = "";
 
     fetchViridianPokemon();
 }
 function ceruleanCityRender(){
+    let title = document.querySelector('.title-text')
+    title.innerText="CERULEAN CITY"
     let allPokemonContainer = document.querySelector('#pokemon-container')
     allPokemonContainer.innerText = "";
 
     fetchCeruleanPokemon();
 }
 function pewterCityRender(){
+    let title = document.querySelector('.title-text')
+    title.innerText="PEWTER CITY"
     let allPokemonContainer = document.querySelector('#pokemon-container')
     allPokemonContainer.innerText = "";
 

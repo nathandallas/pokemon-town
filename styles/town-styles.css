@@ -88,8 +88,11 @@ body {
   padding: 40px 20px 16px 16px;
 }
 .info-section .title__container {
-  background-color: #000;
+  text-align: center;
+  background: linear-gradient(0deg, #49669c, #436da2, #3d74a7, #377bab, #3181af, #2d88b2, #298eb4, #2995b6, #2b9bb7, #30a1b8, #37a7b8, #40adb8);
   color: #fff;
+  width: 50%;
+  border-radius: 3rem;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -101,11 +104,11 @@ body {
   font-weight: 300;
   font-size: 2.5rem;
   text-transform: uppercase;
+  text-align: center;
 }
 .info-section .cards__container {
   background-color: #F0543D;
-  border: 1px solid white;
-  width: 37rem;
+  width: 60rem;
   height: 28rem;
   margin: 1rem;
 }

@@ -8,116 +8,72 @@
   src: url("../../assets/fonts/FuturaStd-Bold.woff2") format("woff2"), url("../../assets/fonts/FuturaStd-Bold.woff") format("woff");
   font-weight: 600;
 }
-#container {
-  background: linear-gradient(0deg, #de1f26, #e02628, #e12c2a, #e3312c, #e5372e, #e63b30, #e84032, #ea4434, #eb4836, #ed4c39, #ee503b, #f0543d);
+.pika-icon {
+  margin: 1rem 2.5rem 0 2.5rem;
+  display: flex;
 }
 
-.container {
-  padding-top: 4rem;
-}
-
-.pokedex-header {
-  font-family: "Futura Std";
-  font-weight: 500;
-  text-transform: uppercase;
-  text-align: center;
-  background: linear-gradient(0deg, #49669c, #436da2, #3d74a7, #377bab, #3181af, #2d88b2, #298eb4, #2995b6, #2b9bb7, #30a1b8, #37a7b8, #40adb8);
-  color: #fff;
-  width: 50%;
-  border-radius: 3rem;
-  padding: 2rem 0;
-  margin: auto;
-}
-
-#pokedex-container {
-  display: flex;
-  flex-wrap: wrap;
-  width: 80%;
-  justify-content: space-between;
-  background: linear-gradient(0deg, #de1f26, #e02628, #e12c2a, #e3312c, #e5372e, #e63b30, #e84032, #ea4434, #eb4836, #ed4c39, #ee503b, #f0543d);
-  padding: 4rem;
-  margin: 0 auto;
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 25%;
-  font-family: "Futura Std";
-  background: linear-gradient(0deg, #49669c, #436da2, #3d74a7, #377bab, #3181af, #2d88b2, #298eb4, #2995b6, #2b9bb7, #30a1b8, #37a7b8, #40adb8);
-  margin: 1rem;
-  position: relative;
-  border-radius: 1rem 0 1rem 1rem;
-  box-shadow: 4px 3px 9px 4px rgba(0, 0, 0, 0.2);
-}
-.card__name {
-  text-transform: uppercase;
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: #fff;
-}
-.card__id {
-  background-color: #FECF0A;
-  font-size: 1.5rem;
-  color: #fff;
-  width: 2.5rem;
-  height: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-.card__type {
-  list-style: none;
-  display: flex;
-  font-size: 1.25rem;
-  color: #FECF0A;
-}
-.card__li {
-  margin: 0.5rem;
-  text-transform: uppercase;
-  text-align: center;
-}
-.card__image {
-  display: flex;
-  width: 80%;
-  margin: 0 auto;
+a {
+  text-decoration: none;
 }
 
 .nav-bar {
-  font-family: "Futura Std";
-  font-weight: 500;
   background-color: #DE1F26;
-  padding: 2rem;
   display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
 }
 .nav-bar__links {
+  display: flex;
+  text-align: center;
   font-weight: 300;
   font-size: 1.5rem;
   text-transform: uppercase;
   color: #fff;
-  margin: 1rem 1.75rem;
+  margin: 1.75rem 3rem 0 0;
 }
 .nav-bar__links--box {
   display: flex;
   width: 75%;
 }
+.nav-bar__links:hover {
+  color: #FECF0A;
+}
 
-a:link {
+.nav-bar__links--box a:link {
   text-decoration: none;
   color: #fff;
 }
 
-a:visited {
+.nav-bar__links--box a:visited {
   text-decoration: none;
   color: #fff;
 }
 
-a:hover {
-  border-bottom: 0.25rem solid #fff;
+.sub-bar {
+  display: flex;
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin: 0.5rem 2rem;
+  font-weight: 300;
+  color: #fff;
+}
+.sub-bar:hover {
+  color: #FECF0A;
+}
+.sub-bar__box {
+  display: flex;
+  margin-left: 6rem;
+}
+
+.sub-bar a:link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.sub-bar a:visited {
+  text-decoration: none;
+  color: #fff;
 }
 
 .map {
