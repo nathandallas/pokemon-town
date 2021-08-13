@@ -1,13 +1,71 @@
 @font-face {
   font-family: "Futura Std";
-  src: url("FuturaStd-Book.woff2") format("woff2"), url("FuturaStd-Book.woff") format("woff");
+  src: url("../../assets/fonts/FuturaStd-Book.woff2") format("woff2"), url("../../assets/fonts/FuturaStd-Book.woff") format("woff");
   font-weight: 500;
 }
 @font-face {
   font-family: "Futura Std";
-  src: url("FuturaStd-Bold.woff2") format("woff2"), url("FuturaStd-Bold.woff") format("woff");
+  src: url("../../assets/fonts/FuturaStd-Bold.woff2") format("woff2"), url("../../assets/fonts/FuturaStd-Bold.woff") format("woff");
   font-weight: 600;
 }
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .pika-icon {
   width: 3rem;
+}
+
+#pokemon-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #F0543D;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 15rem;
+  font-family: "Futura Std";
+  background-color: #40ADB8;
+  margin: 1rem;
+  position: relative;
+}
+.card__name {
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #fff;
+}
+.card__id {
+  background-color: #FECF0A;
+  font-size: 1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.card__type {
+  list-style: none;
+  display: flex;
+  font-size: 1.25rem;
+  color: #FECF0A;
+}
+.card__li {
+  margin: 0.5rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+.card__image {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
 }/*# sourceMappingURL=stylesheet.css.map */

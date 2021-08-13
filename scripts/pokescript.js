@@ -1,4 +1,4 @@
-function renderEverything(){
+function render(){
     let allPokemonContainer = document.querySelector('#pokemon-container')
     allPokemonContainer.innerText = "";
     fetchPokemon();
@@ -32,15 +32,18 @@ function renderPokemon(pokemonData){
     createpokemonImage(pokemonData.id, pokemonContainer);
 
     // name of pokemon
-    let pokemonName = document.createElement('h3') 
+    let pokemonName = document.createElement('h4')
+    pokemonName.classList.add('card__name')
     pokemonName.innerText = pokemonData.name
     
     // pokemon ID
     let pokemonID = document.createElement('p')
-    pokemonID.innerText = `#${pokemonData.id}` 
+    pokemonID.classList.add('card__id')
+    pokemonID.innerText = `${pokemonData.id}` 
    
     // ul to hold pokemon types
     let pokemonTypes = document.createElement('ul')
+    pokemonTypes.classList.add('card__type')
   
     // go through the types array and create li tags for each one
     createTypes(pokemonData.types, pokemonTypes)
@@ -54,6 +57,7 @@ function renderPokemon(pokemonData){
 function createTypes(types, ul){
     types.forEach(function(type){
         let typeList = document.createElement('li');
+        typeList.classList.add('card__li');
         typeList.innerText = type['type']['name'];
         ul.append(typeList)
     })
@@ -63,13 +67,14 @@ function createTypes(types, ul){
 
 function createpokemonImage(pokemonID, containerDiv){
     let pokemonImageContainer = document.createElement('div')
-    pokemonImageContainer.classList.add('image')
 
     let pokemonImage = document.createElement('img')
+    pokemonImage.classList.add('card__image')
     pokemonImage.srcset = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonID}.png`
 
     pokemonImageContainer.append(pokemonImage);
     containerDiv.append(pokemonImageContainer);
 }
 
-renderEverything();
+render();
+
