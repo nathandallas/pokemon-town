@@ -1,65 +1,110 @@
 @font-face {
   font-family: "Futura Std";
   src: url("../../assets/fonts/FuturaStd-Book.woff2") format("woff2"), url("../../assets/fonts/FuturaStd-Book.woff") format("woff");
-  font-weight: 500;
+  font-weight: 400;
 }
 @font-face {
   font-family: "Futura Std";
   src: url("../../assets/fonts/FuturaStd-Bold.woff2") format("woff2"), url("../../assets/fonts/FuturaStd-Bold.woff") format("woff");
   font-weight: 600;
 }
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+@-webkit-keyframes bounce {
+  0%, 100%, 20%, 50%, 80% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-8px);
+  }
+  60% {
+    transform: translateY(-4px);
+  }
+}
+@keyframes bounce {
+  0%, 100%, 20%, 50%, 80% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-8px);
+  }
+  60% {
+    transform: translateY(-4px);
+  }
+}
+#container {
+  background: linear-gradient(0deg, #de1f26, #e02628, #e12c2a, #e3312c, #e5372e, #e63b30, #e84032, #ea4434, #eb4836, #ed4c39, #ee503b, #f0543d);
 }
 
-body {
-  font-family: "Futura Std";
+.container {
+  padding-top: 4rem;
 }
 
-#towns-header {
-  background-color: #DE1F26;
-  width: 100%;
-  height: 5.5rem;
-  display: flex;
-  flex-direction: row;
-}
-
-.pika-icon {
-  margin: 1rem 2.5rem 0 2.5rem;
-}
-
-.nav-bar {
-  background-color: #DE1F26;
-  display: flex;
-}
-.nav-barlinks {
-  display: flex;
-  text-align: center;
-  font-weight: 300;
-  font-size: 1.5rem;
+.pokedex-header {
   text-transform: uppercase;
+  text-align: center;
+  background-color: black;
+  padding: 1rem 0;
+  margin: auto;
   color: #fff;
-  margin: 1.75rem 3rem 0 0;
-  padding-bottom: 1.75rem;
-  text-decoration: none;
+  font-weight: 300;
+  font-size: 5rem;
+  text-align: center;
 }
-.nav-barlinks--box {
+
+#pokedex-container {
   display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  justify-content: space-between;
+  background: linear-gradient(0deg, #de1f26, #e02628, #e12c2a, #e3312c, #e5372e, #e63b30, #e84032, #ea4434, #eb4836, #ed4c39, #ee503b, #f0543d);
+  padding: 2rem;
+  margin: 0 auto;
 }
-.nav-barlinks:hover {
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 28%;
+  font-family: "Futura Std";
+  background: linear-gradient(0deg, #49669c, #436da2, #3d74a7, #377bab, #3181af, #2d88b2, #298eb4, #2995b6, #2b9bb7, #30a1b8, #37a7b8, #40adb8);
+  position: relative;
+  border-radius: 1rem 0 1rem 1rem;
+  box-shadow: 4px 3px 9px 4px rgba(0, 0, 0, 0.2);
+}
+.card__name {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #fff;
+}
+.card__id {
+  background-color: #FECF0A;
+  font-size: 1.125rem;
+  color: #fff;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.card__type {
+  list-style: none;
+  display: flex;
+  font-size: 1.25rem;
   color: #FECF0A;
 }
-
-.nav-barlinks--box a:link {
-  text-decoration: none;
-  color: #fff;
+.card__li {
+  margin: 0.5rem;
+  text-transform: uppercase;
+  text-align: center;
 }
-
-.nav-bar__links--box a:visited {
-  text-decoration: none;
-  color: #fff;
+.card__image {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
 }
 
 #towns-main {
@@ -72,27 +117,32 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  width: 53.5vw;
-  height: 78vh;
+  width: 75%;
+}
+
+.title-text {
+  color: #fff;
+  font-size: 3rem;
+  letter-spacing: 0.25rem;
 }
 
 .info-section {
-  background-color: #F0543D;
+  background: linear-gradient(0deg, #de1f26, #e02628, #e12c2a, #e3312c, #e5372e, #e63b30, #e84032, #ea4434, #eb4836, #ed4c39, #ee503b, #f0543d);
   border-left: 16px solid #FECF0A;
-  width: 46.5vw;
-  height: 78vh;
+  width: 55%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px 20px 16px 16px;
+  padding: 2.5rem 1.25rem 1rem 1rem;
+  min-height: 80vh;
 }
 .info-section .title__container {
-  text-align: center;
-  background: linear-gradient(0deg, #49669c, #436da2, #3d74a7, #377bab, #3181af, #2d88b2, #298eb4, #2995b6, #2b9bb7, #30a1b8, #37a7b8, #40adb8);
-  color: #fff;
-  width: 50%;
-  border-radius: 3rem;
+  font-weight: 300;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  background: black;
+  max-width: 50vw;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -100,21 +150,56 @@ body {
   height: 5rem;
   padding: 1.3rem;
 }
-.info-section .title__container .title-text {
-  font-weight: 300;
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  text-align: center;
-}
 .info-section .cards__container {
-  background-color: #F0543D;
-  width: 60rem;
+  width: 50rem;
   height: 28rem;
-  margin: 1rem;
 }
 
 #towns-footer {
   background-color: #DE1F26;
   width: 100%;
-  height: 9vh;
+  min-height: 12vh;
+}
+
+.choose {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Futura Std";
+  background: linear-gradient(0deg, #49669c, #436da2, #3d74a7, #377bab, #3181af, #2d88b2, #298eb4, #2995b6, #2b9bb7, #30a1b8, #37a7b8, #40adb8);
+  margin: 1rem;
+  width: 40%;
+  position: relative;
+  border-radius: 1rem;
+  box-shadow: 4px 3px 9px 4px rgba(0, 0, 0, 0.2);
+  border: none;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 1rem 0;
+  font-size: 1.75rem;
+  letter-spacing: 0.25rem;
+  -webkit-animation-duration: 0.75s;
+          animation-duration: 0.75s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+.choose:hover {
+  background: linear-gradient(0deg, #559db5, #4fa6bb, #48aec0, #43b7c4, #3fc0c6, #3fc8c7, #43d1c6, #4cd9c4);
+  cursor: pointer;
+  -webkit-animation-name: bounce;
+          animation-name: bounce;
+}
+.choose-container {
+  display: flex;
+  padding: 8rem 0;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.button {
+  width: 89%;
 }/*# sourceMappingURL=town-styles.css.map */

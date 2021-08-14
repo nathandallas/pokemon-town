@@ -5,35 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokemon by Town</title>
-    <link rel="stylesheet" href="styles/stylesheet.css">
-    <link rel="stylesheet" href="styles/main-page.css">
-    <link rel="stylesheet" href="styles/town-styles.css">
+    <link rel="stylesheet" href="../styles/town-styles.css">
+    <link rel="stylesheet" href="../styles/stylesheet.css">
+    <link rel="stylesheet" href="../styles/main-page.css">
 
 </head>
 <body>
     <nav>
         <section class="nav-bar">
-        <a href="./index.html"><img class="pika-icon" src="assets\images\icons\pika-icon.svg" alt="pika icon"></a>
+        <a href="../index.html"><img class="pika-icon" src="../assets/images/icons/pika-icon.svg" alt="pika icon"></a>
         <article class="nav-bar__links--box">
-            <a href='./towns.html'><p class="nav-bar__links">towns</p></a>
+            <a href='./towns.html'><p  class="nav-bar__links">towns</p></a>
             <a href='./pokedex.html'><p class="nav-bar__links">pokédex</p></a>
         </article>
-        
+        <article class="sub-bar__box">
+        </article>
         </section>
     </nav>
 
     <main>
-        
-
         <div id="container">
-            <div class="container"><h1 class="pokedex-header">Kanto Region Pokedex</h1></div>
-            <div id="pokedex-container" class="ui cards">
+            <div class="container">
+                <h1 class="pokedex-header">Kanto Region Pokedex</h1>
+            </div>
+            <div id="pokedex-container">
+                <div class="ui cards"></div>
             </div>
         </div>
-
     </main>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
+    <script src="./scripts/pokescript.js"></script>
     <script src="/scripts/pokedexscript.js"></script>
 </body>
 </html>

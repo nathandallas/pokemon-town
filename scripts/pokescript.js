@@ -5,6 +5,8 @@
 // }
 
 function palletTownRender(){
+    let map = document.querySelector('.map-section')
+    map.style.backgroundImage = "url('../assets/images/PalletTownCrop-icon.png')"
     let title = document.querySelector('.title-text')
     title.innerText="PALLET TOWN"
     let allPokemonContainer = document.querySelector('#pokemon-container')
@@ -13,6 +15,8 @@ function palletTownRender(){
     fetchPalletPokemon();
 }
 function viridianCityRender(){
+    let map = document.querySelector('.map-section')
+    map.style.backgroundImage = "url('../assets/images/ViridianCityCrop-icon.png')"
     let title = document.querySelector('.title-text')
     title.innerText="VIRIDIAN CITY"
     let allPokemonContainer = document.querySelector('#pokemon-container')
@@ -21,6 +25,8 @@ function viridianCityRender(){
     fetchViridianPokemon();
 }
 function ceruleanCityRender(){
+    let map = document.querySelector('.map-section')
+    map.style.backgroundImage = "url('../assets/images/CeruleanCityCrop-icon.png')"
     let title = document.querySelector('.title-text')
     title.innerText="CERULEAN CITY"
     let allPokemonContainer = document.querySelector('#pokemon-container')
@@ -29,6 +35,8 @@ function ceruleanCityRender(){
     fetchCeruleanPokemon();
 }
 function pewterCityRender(){
+    let map = document.querySelector('.map-section')
+    map.style.backgroundImage = "url('../assets/images/PewterCityCrop-icon.png')"
     let title = document.querySelector('.title-text')
     title.innerText="PEWTER CITY"
     let allPokemonContainer = document.querySelector('#pokemon-container')
@@ -179,5 +187,20 @@ document.addEventListener("DOMContentLoaded", () =>{
      locationNav.addEventListener('click', ceruleanCityRender)
  })
 
-
+ document.addEventListener("DOMContentLoaded", () =>{
+    const locationNav = document.querySelector('.pallet-town-t');
+    locationNav.addEventListener('click', palletTownRender)
+})
+document.addEventListener("DOMContentLoaded", () =>{
+    const locationNav = document.querySelector('.viridian-city-t');
+    locationNav.addEventListener('click', viridianCityRender)
+})
+document.addEventListener("DOMContentLoaded", () =>{
+    const locationNav = document.querySelector('.pewter-city-t');
+    locationNav.addEventListener('click', pewterCityRender)
+})
+document.addEventListener("DOMContentLoaded", () =>{
+    const locationNav = document.querySelector('.cerulean-city-t');
+    locationNav.addEventListener('click', ceruleanCityRender)
+})
 

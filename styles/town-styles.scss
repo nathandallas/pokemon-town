@@ -1,58 +1,8 @@
-@use './partials/typography' as *;
-@use './partials/partial' as *;
-@use './partials/mixins' as *;
+@use 'partials/typography' as *;
+@use 'partials/partial' as *;
+@use 'partials/mixins' as *;
+@use 'partials/pokedex'as *;
 
-*, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-body{
-    font-family: 'Futura Std';
-}
-//HEADER
-#towns-header{
-background-color: #DE1F26;
-width:100%;
-height: 5.5rem;
-display: flex;
-flex-direction: row;
-}
-
-
-.pika-icon{
-    margin: 1rem  2.5rem 0 2.5rem;
-}
-
-.nav-bar{
-    background-color: $poke-site-red;
-    display: flex;
-
-    &links{
-        display: flex;
-        text-align: center;
-        @include links;
-        color: #fff;
-        margin: 1.75rem 3rem 0 0;
-        padding-bottom:1.75rem;
-        text-decoration: none;
-
-        &--box{
-            display: flex;
-        }
-        &:hover {
-            color: $poke-site-yellow;
-        }
-    }
-}
-.nav-barlinks--box a:link {
-    text-decoration: none; 
-    color: #fff; 
-}
-.nav-bar__links--box a:visited {
-    text-decoration: none; 
-    color: #fff;
-}
 
 //MAIN
 #towns-main{
@@ -65,51 +15,89 @@ flex-direction: row;
     background-size:cover;
     background-repeat: no-repeat;
     background-position: center;
-    width: 53.5vw;
-    height:78vh;
+    width: 75%;
+    
+}
+
+.title-text {
+    color: #fff;
+    font-size: 3rem;
+    letter-spacing: .25rem;
 }
 
 .info-section{
-    background-color: #F0543D;
+    background: linear-gradient(0deg, #de1f26, #e02628, #e12c2a, #e3312c, #e5372e, #e63b30, #e84032, #ea4434, #eb4836, #ed4c39, #ee503b, #f0543d);
     border-left: 16px solid #FECF0A;
-    width:46.5vw;
-    height:78vh;
+    width: 55%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 40px 20px 16px 16px;
-    
-   
+    padding: 2.5rem 1.25rem 1rem 1rem;
+    min-height: 80vh;
 
     .title__container{
-        text-align: center;
-        background: linear-gradient(0deg, #49669c, #436da2, #3d74a7, #377bab, #3181af, #2d88b2, #298eb4, #2995b6, #2b9bb7, #30a1b8, #37a7b8, #40adb8);
-        color: #fff;
-        width: 50%;
-        border-radius: 3rem;
+        @include links;
+        background: black;
+        max-width: 50vw;
         display: flex;
         justify-content: flex-end;
         align-items:center;
         width: 37rem;
         height:5rem;
         padding:1.3rem;
-        .title-text{
-            @include town-title;
-            text-align: center;
-        }
+        
     }
     .cards__container{
-        background-color: #F0543D;
-        width:60rem;
+        width:50rem;
         height:28rem;
-        margin:1rem;
     }
 }
-
 
 #towns-footer{
     background-color: #DE1F26;
     width:100%;
-    height:9vh;
+    min-height:12vh;
 }
+
+
+.choose {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Futura Std';
+    background: linear-gradient(0deg, #49669c, #436da2, #3d74a7, #377bab, #3181af, #2d88b2, #298eb4, #2995b6, #2b9bb7, #30a1b8, #37a7b8, #40adb8);
+    margin: 1rem;
+    width: 40%;
+    position: relative;
+    border-radius: 1rem;
+    -webkit-box-shadow: 4px 3px 9px 4px rgba(0,0,0,0.2); 
+    box-shadow: 4px 3px 9px 4px rgba(0,0,0,0.2);
+    border: none;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    font-size: 1.75rem;
+    letter-spacing: .25rem;
+    animation-duration: .75s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    &:hover {
+        background: linear-gradient(0deg, #559db5, #4fa6bb, #48aec0, #43b7c4, #3fc0c6, #3fc8c7, #43d1c6, #4cd9c4);
+        cursor: pointer;
+        animation-name: bounce;
+    }
+    &-container {
+        display: flex;
+        padding: 8rem 0;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+    }
+}
+
+.button {
+    width: 89%;
+}
+

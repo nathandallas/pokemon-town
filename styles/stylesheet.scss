@@ -1,8 +1,7 @@
 @use 'partials/typography' as *;
 @use 'partials/partial' as *;
 @use 'partials/mixins' as *;
-@use 'partials/pokedex';
-@use 'town-styles';
+
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -20,15 +19,14 @@ h1, h2, h3, p, link, ul, li{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    background-color: $poke-site-orange;
-    background: linear-gradient(0deg, #de1f26, #e02628, #e12c2a, #e3312c, #e5372e, #e63b30, #e84032, #ea4434, #eb4836, #ed4c39, #ee503b, #f0543d);
+
 }
 
 .card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 25%;
+    width: 30%;
     font-family: 'Futura Std';
     background-color: $poke-site-blue;
     margin: 1rem;
@@ -70,4 +68,9 @@ h1, h2, h3, p, link, ul, li{
         margin: 0 auto;
     }
 
+}
+
+.cards__container {
+    
+    max-width: 50vw;
 }

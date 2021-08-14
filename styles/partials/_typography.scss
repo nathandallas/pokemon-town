@@ -2,7 +2,7 @@
     font-family: 'Futura Std';
     src: url('../../assets/fonts/FuturaStd-Book.woff2') format('woff2'),
         url('../../assets/fonts/FuturaStd-Book.woff') format('woff');
-    font-weight: 500;
+    font-weight: 400;
 }
 
 @font-face {
@@ -15,11 +15,5 @@
 @mixin links {
     font-weight: 300;
     font-size: 1.5rem;
-    text-transform: uppercase;
-}
-
-@mixin town-title{
-    font-weight: 300;
-    font-size: 2.5rem;
     text-transform: uppercase;
 }

@@ -11,16 +11,15 @@
     padding-top: 4rem;
 }
 .pokedex-header {
-    font-family: 'Futura Std';
-    font-weight: 500;
     text-transform: uppercase;
     text-align: center;
-    background: linear-gradient(0deg, #49669c, #436da2, #3d74a7, #377bab, #3181af, #2d88b2, #298eb4, #2995b6, #2b9bb7, #30a1b8, #37a7b8, #40adb8);
-    color: #fff;
-    width: 50%;
-    border-radius: 3rem;
-    padding: 2rem 0;
+    background-color: black;
+    padding: 1rem 0;
     margin: auto;
+    color: #fff;
+    font-weight: 300;
+    font-size: 5rem;
+    text-align: center;
 }
 
 #pokedex-container {
@@ -29,7 +28,7 @@
     width: 80%;
     justify-content: space-between;
     background: linear-gradient(0deg, #de1f26, #e02628, #e12c2a, #e3312c, #e5372e, #e63b30, #e84032, #ea4434, #eb4836, #ed4c39, #ee503b, #f0543d);
-    padding: 4rem;
+    padding: 2rem;
     margin: 0 auto;
 }
 
@@ -37,10 +36,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 25%;
+    width: 28%;
     font-family: 'Futura Std';
     background: linear-gradient(0deg, #49669c, #436da2, #3d74a7, #377bab, #3181af, #2d88b2, #298eb4, #2995b6, #2b9bb7, #30a1b8, #37a7b8, #40adb8);
-    margin: 1rem;
     position: relative;
     border-radius: 1rem 0 1rem 1rem;
     -webkit-box-shadow: 4px 3px 9px 4px rgba(0,0,0,0.2); 
@@ -54,7 +52,7 @@
     }
     &__id {
         background-color: $poke-site-yellow;
-        font-size: 1.5rem;
+        font-size: 1.125rem;
         color: #fff;
         width: 2.5rem;
         height: 2.5rem;
