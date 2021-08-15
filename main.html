@@ -8,15 +8,14 @@
     <link rel="stylesheet" href="../styles/town-styles.css">
     <link rel="stylesheet" href="../styles/stylesheet.css">
     <link rel="stylesheet" href="../styles/main-page.css">
-
 </head>
 <body>
     <nav>
         <section class="nav-bar">
-        <a href="../main.html"><img class="pika-icon" src="../assets/images/icons/pika-icon.svg" alt="pika icon"></a>
+        <a href="./main.html"><img class="pika-icon" src="assets/images/icons/pika-icon.svg" alt="pika icon"></a>
         <article class="nav-bar__links--box">
-            <a href='./towns.html'><p  class="nav-bar__links">towns</p></a>
-            <a href='./pokedex.html'><p class="nav-bar__links">pokédex</p></a>
+            <a href='./pages/towns.html'><p class="nav-bar__links">towns</p></a>
+            <a href='./pages/pokedex.html'><p class="nav-bar__links">pokédex</p></a>
         </article>
         <article class="sub-bar__box">
         </article>
@@ -24,17 +23,16 @@
     </nav>
 
     <main>
-        <div id="container">
-            <div class="container">
-                <h1 class="pokedex-header">Kanto Region Pokedex</h1>
-            </div>
-            <div id="pokedex-container">
-                <div class="ui cards"></div>
-            </div>
-        </div>
+        <section>
+            <img src="./assets/images/map.png" alt="Kanto Map" class="map">
+        </section>
+
     </main>
+
+    <footer class="main-footer">
+        <div class="credit"><p>©2021 Alyssa Challender (<a href="https://github.com/alysurr">GitHub</a>) and Nadia Di Trapani (<a href="https://github.com/NadiaDiTraps">GitHub</a>)</p></div>
+    </footer>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./scripts/pokescript.js"></script>
-    <script src="/scripts/pokedexscript.js"></script>
 </body>
 </html>
