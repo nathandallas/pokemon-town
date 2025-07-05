@@ -112,6 +112,45 @@
   margin: 0 auto;
 }
 
+.sub-bar {
+  border: none;
+  display: none;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  margin: 0.5rem 1rem;
+  color: #fff;
+  background: none;
+  padding-bottom: 1rem;
+  letter-spacing: 0.1rem;
+}
+@media screen and (min-width: 768px) {
+  .sub-bar {
+    display: flex;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .sub-bar {
+    margin: 0.5rem 2rem;
+  }
+}
+.sub-bar:hover {
+  color: #FECF0A;
+}
+.sub-bar__box {
+  display: flex;
+  justify-content: center;
+}
+
+.sub-bar a:link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.sub-bar a:visited {
+  text-decoration: none;
+  color: #fff;
+}
+
 #towns-main {
   display: flex;
 }
@@ -147,13 +186,17 @@
 .info-section {
   background: linear-gradient(0deg, #de1f26, #e02628, #e12c2a, #e3312c, #e5372e, #e63b30, #e84032, #ea4434, #eb4836, #ed4c39, #ee503b, #f0543d);
   border-left: 16px solid #fecf0a;
-  width: 55%;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  flex-direction: column;
   padding: 2.5rem 1.25rem 1rem 1rem;
   min-height: 80vh;
+}
+@media screen and (min-width: 1024px) {
+  .info-section {
+    width: 55%;
+    justify-content: center;
+  }
 }
 .info-section .title__container {
   font-weight: 300;

@@ -122,112 +122,6 @@ body {
   background: linear-gradient(0deg, #de1f26, #e02628);
 }
 
-.pika-icon {
-  margin: 1rem 1.5rem 0 1rem;
-  display: flex;
-  transform: rotate(340deg);
-}
-@media screen and (min-width: 768px) {
-  .pika-icon {
-    flex-wrap: wrap;
-    margin: 1rem 2.5rem 0 2.5rem;
-    width: 4rem;
-    animation-duration: 0.75s;
-    animation-fill-mode: both;
-    animation-timing-function: ease-out;
-    animation-iteration-count: infinite;
-  }
-  .pika-icon:hover {
-    cursor: pointer;
-    animation-name: bounce;
-  }
-}
-
-a {
-  text-decoration: none;
-}
-
-.nav-bar, .nav-bar-towns {
-  background: linear-gradient(0deg, #de1f26, #e02628, #e12c2a, #e3312c, #e5372e, #e63b30, #e84032, #ea4434, #eb4836, #ed4c39, #ee503b, #f0543d);
-  display: flex;
-  padding-bottom: 2rem;
-}
-@media screen and (min-width: 768px) {
-  .nav-bar, .nav-bar-towns {
-    flex-wrap: wrap;
-  }
-}
-@media screen and (min-width: 768px) {
-  .nav-bar-towns {
-    padding-bottom: 0;
-  }
-}
-.nav-bar__links {
-  display: flex;
-  letter-spacing: 0.25rem;
-  font-weight: 300;
-  font-size: 1.5rem;
-  text-transform: uppercase;
-  color: #fff;
-  margin: 1.75rem 3rem 0 0;
-}
-.nav-bar__links--box {
-  display: flex;
-  width: 75%;
-}
-.nav-bar__links:hover {
-  color: #FECF0A;
-}
-
-.nav-bar__links--box a:link {
-  text-decoration: none;
-  color: #fff;
-}
-
-.nav-bar__links--box a:visited {
-  text-decoration: none;
-  color: #fff;
-}
-
-.sub-bar {
-  border: none;
-  display: none;
-  font-size: 1.25rem;
-  text-transform: uppercase;
-  margin: 0.5rem 1rem;
-  color: #fff;
-  background: none;
-  padding-bottom: 1rem;
-  letter-spacing: 0.1rem;
-}
-@media screen and (min-width: 768px) {
-  .sub-bar {
-    display: flex;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .sub-bar {
-    margin: 0.5rem 2rem;
-  }
-}
-.sub-bar:hover {
-  color: #FECF0A;
-}
-.sub-bar__box {
-  display: flex;
-  justify-content: center;
-}
-
-.sub-bar a:link {
-  text-decoration: none;
-  color: #fff;
-}
-
-.sub-bar a:visited {
-  text-decoration: none;
-  color: #fff;
-}
-
 .map {
   background-color: #de1f26;
   max-width: 100%;
@@ -244,10 +138,15 @@ a {
 .credit {
   color: #fff;
   margin: 0 auto;
-  padding: 4rem;
+  padding: 2rem 1rem;
   text-align: center;
   letter-spacing: 0.07rem;
 }
 .credit a {
   color: #FECF0A;
+}
+@media screen and (min-width: 768px) {
+  .credit {
+    padding: 4rem;
+  }
 }/*# sourceMappingURL=main-page.css.map */

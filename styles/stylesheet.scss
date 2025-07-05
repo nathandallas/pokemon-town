@@ -11,8 +11,89 @@
 h1, h2, h3, p, link, ul, li{
     font-family: "futura std";
 }
+
+
+//nav bar
 .pika-icon {
-    width: 3rem;
+  margin: 1rem 1.5rem 0 1rem;
+  width: 3.5rem;
+  display: flex;
+  transform: rotate(340deg);
+  @include tablet {
+    flex-wrap: wrap;
+    margin: 1rem 2.5rem 0 2.5rem;
+    width: 4rem;
+    animation-duration: 0.75s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    &:hover {
+      cursor: pointer;
+      animation-name: bounce;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  font-size: 1rem;
+}
+.nav-bar {
+  background: linear-gradient(
+    0deg,
+    #de1f26,
+    #e02628,
+    #e12c2a,
+    #e3312c,
+    #e5372e,
+    #e63b30,
+    #e84032,
+    #ea4434,
+    #eb4836,
+    #ed4c39,
+    #ee503b,
+    #f0543d
+  );
+  display: flex;
+
+  padding-bottom: 2rem;
+
+  @include tablet {
+    flex-wrap: wrap;
+  }
+
+  &-towns {
+    @extend .nav-bar;
+    @include tablet {
+      padding-bottom: 0;
+    }
+  }
+
+  &__links {
+    display: flex;
+    letter-spacing: 0.25rem;
+    @include links;
+    color: #fff;
+    margin: 1.75rem 1rem 0 0;
+    @include tablet {
+      margin: 1.75rem 3rem 0 0;
+    }
+    &--box {
+      display: flex;
+      width: 75%;
+    }
+    &:hover {
+      color: $poke-site-yellow;
+    }
+  }
+}
+.nav-bar__links--box a:link {
+  text-decoration: none;
+  color: #fff;
+}
+.nav-bar__links--box a:visited {
+  text-decoration: none;
+  color: #fff;
 }
 
 #pokemon-container {
@@ -54,8 +135,11 @@ h1, h2, h3, p, link, ul, li{
     &__type {
         list-style: none;
         display: flex;
-        font-size: 1.25rem;
+        
         color: $poke-site-yellow;
+        @include tablet {
+            font-size: 1.25rem;
+        }
     }
     &__li {
         margin: 0 1rem 1rem 0;
