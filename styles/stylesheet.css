@@ -8,17 +8,6 @@
   src: url("../../assets/fonts/FuturaStd-Bold.woff2") format("woff2"), url("../../assets/fonts/FuturaStd-Bold.woff") format("woff");
   font-weight: 600;
 }
-@-webkit-keyframes bounce {
-  0%, 100%, 20%, 50%, 80% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-8px);
-  }
-  60% {
-    transform: translateY(-4px);
-  }
-}
 @keyframes bounce {
   0%, 100%, 20%, 50%, 80% {
     transform: translateY(0);

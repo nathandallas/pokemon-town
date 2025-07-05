@@ -1,107 +1,156 @@
-@use 'partials/typography' as *;
-@use 'partials/partial' as *;
-@use 'partials/mixins' as *;
-@use 'partials/pokedex'as *;
+@use "partials/typography" as *;
+@use "partials/partial" as *;
+@use "partials/mixins" as *;
+@use "partials/pokedex" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(0deg, #de1f26, #e02628);
+}
 
 //nav bar
-.pika-icon{
-    margin: 1rem  2.5rem 0 2.5rem;
-    display: flex;
+.pika-icon {
+  margin: 1rem 1.5rem 0 1rem;
+  display: flex;
+  transform: rotate(340deg);
+  @include tablet {
+    flex-wrap: wrap;
+    margin: 1rem 2.5rem 0 2.5rem;
     width: 4rem;
-    transform: rotate(340deg);
-    animation-duration: .75s;
+    animation-duration: 0.75s;
     animation-fill-mode: both;
     animation-timing-function: ease-out;
     animation-iteration-count: infinite;
     &:hover {
-        cursor: pointer;
-        animation-name: bounce;
+      cursor: pointer;
+      animation-name: bounce;
     }
+  }
 }
 
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
-.nav-bar{
-    background: linear-gradient(0deg, #de1f26, #e02628, #e12c2a, #e3312c, #e5372e, #e63b30, #e84032, #ea4434, #eb4836, #ed4c39, #ee503b, #f0543d);
-    display: flex;
+.nav-bar {
+  background: linear-gradient(
+    0deg,
+    #de1f26,
+    #e02628,
+    #e12c2a,
+    #e3312c,
+    #e5372e,
+    #e63b30,
+    #e84032,
+    #ea4434,
+    #eb4836,
+    #ed4c39,
+    #ee503b,
+    #f0543d
+  );
+  display: flex;
+
+  padding-bottom: 2rem;
+
+  @include tablet {
     flex-wrap: wrap;
-    padding-bottom: 2rem;
+  }
 
-    &-towns {
-        @extend .nav-bar;
-        padding-bottom: 0;
+  &-towns {
+    @extend .nav-bar;
+    @include tablet {
+      padding-bottom: 0;
     }
+  }
 
-    &__links{    
-        display: flex;
-        text-align: center;
-        
-        letter-spacing: .25rem;
-        @include links;
-        color: #fff;
-        margin: 1.75rem 3rem 0 0;
-        
-        
-        &--box{
-            display: flex;
-            width:75%
-        }
-        &:hover {
-            color: $poke-site-yellow;
-        }
-    }    
-}
-.nav-bar__links--box a:link {text-decoration: none; color: #fff; }
-.nav-bar__links--box a:visited {text-decoration: none; color: #fff;}
-
-.sub-bar{
-    border: none;
+  &__links {
     display: flex;
-    font-size: 1.25rem;
-    text-transform: uppercase;
-    margin: 0.5rem 2rem;
+
+    letter-spacing: 0.25rem;
+    @include links;
     color: #fff;
-    background: none;
-    padding-bottom: 1rem;
-    letter-spacing: .1rem;
+    margin: 1.75rem 3rem 0 0;
+
+    &--box {
+      display: flex;
+      width: 75%;
+    }
     &:hover {
-        color: $poke-site-yellow;
+      color: $poke-site-yellow;
     }
-
-    &__box{
-        display: flex;
-        margin-left: 12rem;
-        flex-wrap: wrap;
-    }
+  }
 }
-.sub-bar a:link {text-decoration: none; color: #fff; }
-.sub-bar a:visited {text-decoration: none; color: #fff;}
+.nav-bar__links--box a:link {
+  text-decoration: none;
+  color: #fff;
+}
+.nav-bar__links--box a:visited {
+  text-decoration: none;
+  color: #fff;
+}
 
+.sub-bar {
+  border: none;
+  display: none;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  margin: 0.5rem 1rem;
+  color: #fff;
+  background: none;
+  padding-bottom: 1rem;
+  letter-spacing: 0.1rem;
+
+  @include tablet {
+    display: flex;
+  }
+
+  @include desktop {
+    margin: 0.5rem 2rem;
+  }
+
+  &:hover {
+    color: $poke-site-yellow;
+  }
+
+  &__box {
+    display: flex;
+    justify-content: center;
+  }
+}
+.sub-bar a:link {
+  text-decoration: none;
+  color: #fff;
+}
+.sub-bar a:visited {
+  text-decoration: none;
+  color: #fff;
+}
 
 //main map
-.map{
-    background-color: #de1f26;
-    max-width: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.map {
+  background-color: #de1f26;
+  max-width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .main-footer {
-    background-color: #de1f26;
-    min-height: 1vh;
-    margin-top: -1rem;
-
+  background-color: #de1f26;
+  margin-top: -1rem;
 }
 
 .credit {
-    color: #fff;
-    margin: 0 auto;
-    padding: 4rem;
-    text-align: center;
-    letter-spacing: .07rem;
-    & a {
-        color: $poke-site-yellow;
-    }
+  color: #fff;
+  margin: 0 auto;
+  padding: 4rem;
+  text-align: center;
+  letter-spacing: 0.07rem;
+  & a {
+    color: $poke-site-yellow;
+  }
 }

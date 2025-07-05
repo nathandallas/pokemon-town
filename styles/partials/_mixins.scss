@@ -1,17 +1,42 @@
+// Define mixins for common breakpoints
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1024px;
+
+@mixin phone {
+  @media screen and (max-width: #{$tablet-breakpoint - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+
 @mixin ul-nostyle {
-	list-style: none;
-	padding: 0;
-	margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 @mixin double-shadow($color) {
-	@include box-shadow(0 1px 0 lighten($color, 10%) inset, 0 -1px 0 darken($color, 10%) inset);
+  @include box-shadow(
+    0 1px 0 lighten($color, 10%) inset,
+    0 -1px 0 darken($color, 10%) inset
+  );
 }
 
 @mixin hover-style($color) {
-	&:hover {
-		background: lighten($color, 3%);
-	}
+  &:hover {
+    background: lighten($color, 3%);
+  }
 }
 
 @mixin animation($content) {
@@ -21,19 +46,29 @@
 }
 
 @mixin keyframes($name) {
-  @keyframes #{$name} { @content; }
-  @-moz-keyframes #{$name} { @content; }
-  @-webkit-keyframes #{$name} { @content; }
+  @keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
 }
 
 @keyframes bounce {
-	0%, 100%, 20%, 50%, 80% {
-		transform:         translateY(0)
-	}
-	40% {
-		transform:         translateY(-8px);
-	}
-	60% {
-		transform:         translateY(-4px);
-	}
+  0%,
+  100%,
+  20%,
+  50%,
+  80% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-8px);
+  }
+  60% {
+    transform: translateY(-4px);
+  }
 }
