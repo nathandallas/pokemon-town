@@ -45,7 +45,7 @@
 //MAIN
 #towns-main {
   display: flex;
-  
+
   @include desktop {
     flex-direction: row;
   }
@@ -88,16 +88,16 @@
     #f0543d
   );
   border-left: 16px solid #fecf0a;
-  
+
   display: flex;
   align-items: center;
   flex-direction: column;
   padding: 2.5rem 1.25rem 1rem 1rem;
   min-height: 80vh;
-  
+
   @include desktop {
     width: 55%;
-    
+
     justify-content: center;
   }
 
@@ -121,7 +121,6 @@
 #towns-footer {
   background-color: #de1f26;
   width: 100%;
-  min-height: 12vh;
 }
 
 .choose {
@@ -177,7 +176,7 @@
   }
   &-container {
     display: flex;
-    padding: 8rem 0;
+    padding: 8rem 0 0;
     flex-wrap: wrap;
     justify-content: space-around;
   }

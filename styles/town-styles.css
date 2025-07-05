@@ -219,7 +219,6 @@
 #towns-footer {
   background-color: #de1f26;
   width: 100%;
-  min-height: 12vh;
 }
 
 .choose {
@@ -251,7 +250,7 @@
 }
 .choose-container {
   display: flex;
-  padding: 8rem 0;
+  padding: 8rem 0 0;
   flex-wrap: wrap;
   justify-content: space-around;
 }

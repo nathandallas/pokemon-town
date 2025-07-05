@@ -19,13 +19,21 @@
     transform: translateY(-4px);
   }
 }
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-h1, h2, h3, p, link, ul, li {
+h1,
+h2,
+h3,
+p,
+link,
+ul,
+li {
   font-family: "futura std";
 }
 
@@ -83,11 +91,11 @@ a {
 @media screen and (min-width: 768px) {
   .nav-bar__links {
     margin: 1.75rem 3rem 0 0;
+    font-size: 2rem;
   }
 }
 .nav-bar__links--box {
   display: flex;
-  width: 75%;
 }
 .nav-bar__links:hover {
   color: #FECF0A;
@@ -113,11 +121,15 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 30%;
   font-family: "Futura Std";
   background-color: #40ADB8;
   margin: 1rem;
   position: relative;
+}
+@media screen and (min-width: 768px) {
+  .card {
+    width: 30%;
+  }
 }
 .card__name {
   text-transform: uppercase;
@@ -145,7 +157,7 @@ a {
 }
 @media screen and (min-width: 768px) {
   .card__type {
-    font-size: 1.25rem;
+    font-size: 2.25rem;
   }
 }
 .card__li {
