@@ -1,4 +1,4 @@
-import "/assets/town-styles.scss";
+import "../assets/town-styles.css";
 
 const componentCache = new Map();
 
@@ -11,7 +11,7 @@ async function loadComponent(componentName, targetId) {
   }
 
   try {
-    const response = await fetch(`/components/${componentName}.html`);
+    const response = await fetch(`components/${componentName}.html`);
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
     const html = await response.text();
 

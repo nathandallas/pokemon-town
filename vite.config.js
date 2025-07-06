@@ -3,19 +3,14 @@ import { resolve } from "path";
 
 export default defineConfig({
   root: "src",
-  base: "", // /pokemon-town/ if GitHub Pages needs to deploy
+  base: process.env.NODE_ENV === "production" ? "/pokemon-town/" : "/",
   build: {
     outDir: "../dist",
     emptyOutDir: true,
     rollupOptions: {
       input: {
-        main: resolve(__dirname, "src/index.html"),
+        index: resolve(__dirname, "src/index.html"), // Outputs to dist/index.html
       },
-    },
-  },
-  resolve: {
-    alias: {
-      "@": resolve(__dirname, "src"),
     },
   },
 });

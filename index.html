@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="refresh" content="0; url=src/index.html" />
-    <title>Redirecting...</title>
-  </head>
   <body>
-    <p>If you are not redirected, <a href="src/index.html">click here</a>.</p>
+    <script>
+      // Use this redirect instead
+      const base = window.location.pathname.includes('/pokemon-town/') 
+        ? '/pokemon-town/src/index.html' 
+        : 'src/index.html';
+      window.location.href = base;
+    </script>
   </body>
 </html>
