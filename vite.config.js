@@ -3,8 +3,9 @@ import { resolve } from "path";
 
 export default defineConfig({
   root: "src",
+  base: "", // /pokemon-town/ if GitHub Pages needs to deploy
   build: {
-    outDir: "/dist",
+    outDir: "../dist",
     emptyOutDir: true,
     rollupOptions: {
       input: {
