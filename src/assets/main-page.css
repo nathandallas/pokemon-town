@@ -64,16 +64,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 40%;
+  width: 46%;
   font-family: "Futura Std";
   background: linear-gradient(0deg, #49669c, #436da2, #3d74a7, #377bab, #3181af, #2d88b2, #298eb4, #2995b6, #2b9bb7, #30a1b8, #37a7b8, #40adb8);
   position: relative;
+  margin-bottom: 2rem;
   border-radius: 1rem 0 1rem 1rem;
   box-shadow: 4px 3px 9px 4px rgba(0, 0, 0, 0.2);
 }
 @media screen and (min-width: 768px) {
   .card {
-    width: 28%;
+    width: 30%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .card {
+    width: 23%;
   }
 }
 .card__name {
@@ -81,6 +87,16 @@
   font-size: 1.5rem;
   font-weight: 500;
   color: #fff;
+}
+@media screen and (min-width: 768px) {
+  .card__name {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .card__name {
+    font-size: 2.25 rem;
+  }
 }
 .card__id {
   background-color: #FECF0A;
@@ -97,9 +113,13 @@
 }
 .card__type {
   list-style: none;
-  display: flex;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   color: #FECF0A;
+}
+@media screen and (min-width: 768px) {
+  .card__type {
+    font-size: 2rem;
+  }
 }
 .card__li {
   margin: 0.5rem;
@@ -110,12 +130,6 @@
   display: flex;
   width: 80%;
   margin: 0 auto;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
 body {
@@ -130,13 +144,12 @@ body {
   background-repeat: no-repeat;
 }
 
-.main-footer {
+footer {
   background-color: #de1f26;
 }
 
 .credit {
   color: #fff;
-  margin: 0 auto;
   padding: 2rem 1rem;
   text-align: center;
   letter-spacing: 0.07rem;

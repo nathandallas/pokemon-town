@@ -63,7 +63,7 @@
   padding-top: 2rem;
   margin: 0 auto;
 
-@include desktop {
+  @include desktop {
     width: 80%;
   }
 }
@@ -72,7 +72,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 40%;
+  width: 46%;
   font-family: "Futura Std";
   background: linear-gradient(
     0deg,
@@ -90,19 +90,28 @@
     #40adb8
   );
   position: relative;
+  margin-bottom: 2rem;
   border-radius: 1rem 0 1rem 1rem;
   -webkit-box-shadow: 4px 3px 9px 4px rgba(0, 0, 0, 0.2);
   box-shadow: 4px 3px 9px 4px rgba(0, 0, 0, 0.2);
 
   @include tablet {
-    width: 28%;
+    width: 30%;
   }
-
+  @include desktop {
+    width: 23%;
+  }
   &__name {
     text-transform: uppercase;
     font-size: 1.5rem;
     font-weight: 500;
     color: #fff;
+    @include tablet {
+      font-size: 2rem;
+    }
+    @include desktop {
+      font-size: 2.25 rem;
+    }
   }
   &__id {
     background-color: $poke-site-yellow;
@@ -119,9 +128,11 @@
   }
   &__type {
     list-style: none;
-    display: flex;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     color: $poke-site-yellow;
+    @include tablet {
+      font-size: 2rem;
+    }
   }
   &__li {
     margin: 0.5rem;

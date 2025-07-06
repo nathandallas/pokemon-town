@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cerulean-city City</title>
+
+    <link rel="stylesheet" href="/assets/town-styles.css" />
+    <link rel="stylesheet" href="/assets/stylesheet.css" />
+  </head>
+  <body>
+    <nav>
+      <section class="nav-bar">
+        <a href="/"
+          ><img
+            class="pika-icon"
+            src="/assets/images/icons/pika-icon.svg"
+            alt="pika icon"
+        /></a>
+        <article class="nav-bar__links--box">
+          <a href="/towns.html"><p class="nav-bar__links">towns</p></a>
+          <a href="/pokedex.html"><p class="nav-bar__links">pokédex</p></a>
+        </article>
+        <article class="sub-bar__box">
+          <a href="/towns.html" class="sub-bar"><p>pallet town</p></a>
+          <a href="/viridian-city.html" class="sub-bar"><p>viridian city</p></a>
+          <a href="/pewter-city.html" class="sub-bar"><p>pewter city</p></a>
+          <a href="/cerulean-city.html" class="sub-bar"><p>cerulean city</p></a>
+        </article>
+      </section>
+    </nav>
+    <main id="towns-main">
+      <section class="map-section">
+        <!-- Map icons -->
+      </section>
+      <section class="info-section">
+        <div class="title__container">
+          <p class="title-text">Cerulean city</p>
+        </div>
+        <div class="cards__container">
+          <div id="container">
+            <div id="pokemon-container" class="ui cards"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="towns-footer"></footer>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/scripts/pokescript.js"></script>
+  </body>
+</html>

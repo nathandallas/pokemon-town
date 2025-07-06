@@ -117,60 +117,6 @@ a {
   justify-content: space-between;
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: "Futura Std";
-  background-color: #40ADB8;
-  margin: 1rem;
-  position: relative;
-}
-@media screen and (min-width: 768px) {
-  .card {
-    width: 30%;
-  }
-}
-.card__name {
-  text-transform: uppercase;
-  font-size: 2.25rem;
-  font-weight: 500;
-  color: #fff;
-}
-.card__id {
-  background-color: #FECF0A;
-  color: #fff;
-  font-size: 1.5rem;
-  width: 2.5rem;
-  height: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-.card__type {
-  list-style: none;
-  display: flex;
-  color: #FECF0A;
-}
-@media screen and (min-width: 768px) {
-  .card__type {
-    font-size: 2.25rem;
-  }
-}
-.card__li {
-  margin: 0 1rem 1rem 0;
-  text-transform: uppercase;
-  text-align: center;
-}
-.card__image {
-  display: flex;
-  width: 80%;
-  margin: 0 auto;
-}
-
 .cards__container {
   max-width: 50vw;
 }/*# sourceMappingURL=stylesheet.css.map */

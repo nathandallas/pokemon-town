@@ -3,19 +3,9 @@
 @use "partials/mixins" as *;
 @use "partials/pokedex" as *;
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
   background: linear-gradient(0deg, #de1f26, #e02628);
 }
-
-
-
-
 
 //main map
 .map {
@@ -26,14 +16,12 @@ body {
   background-repeat: no-repeat;
 }
 
-.main-footer {
+footer {
   background-color: #de1f26;
-  
 }
 
 .credit {
   color: #fff;
-  margin: 0 auto;
   padding: 2rem 1rem;
   text-align: center;
   letter-spacing: 0.07rem;
