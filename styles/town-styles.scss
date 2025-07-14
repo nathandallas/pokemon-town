@@ -30,7 +30,6 @@
 
   &__box {
     display: flex;
-    justify-content: center;
   }
 }
 .sub-bar a:link {
@@ -45,26 +44,37 @@
 //MAIN
 #towns-main {
   display: flex;
-
+  flex-direction: column;
   @include desktop {
+    justify-content: space-between;
+
     flex-direction: row;
   }
 }
+
 .map-section {
-  background-image: url("../assets/images/map.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 75%;
+  @include desktop {
+    width: 44vw;
+  }
+}
+
+.map-crop {
+  height: 300px;
+  object-fit: cover;
+  @include desktop {
+    height: 90vh;
+    
+    object-position: 25% 90%;
+  }
 }
 
 .title-text {
   color: #fff;
-
   letter-spacing: 0.25rem;
-
+  font-size: 2rem;
   @include tablet {
     font-size: 2rem;
+    padding-left: 4rem;
   }
   @include desktop {
     font-size: 3rem;
@@ -72,80 +82,41 @@
 }
 
 .info-section {
-  background: linear-gradient(
-    0deg,
-    #de1f26,
-    #e02628,
-    #e12c2a,
-    #e3312c,
-    #e5372e,
-    #e63b30,
-    #e84032,
-    #ea4434,
-    #eb4836,
-    #ed4c39,
-    #ee503b,
-    #f0543d
-  );
-  border-left: 16px solid #fecf0a;
-
+  background: linear-gradient(0deg, #de1f26, #e02628, #e12c2a, #e3312c, #e5372e, #e63b30, #e84032, #ea4434, #eb4836, #ed4c39, #ee503b, #f0543d);
   display: flex;
   align-items: center;
+  justify-content: space-between;
   flex-direction: column;
-  padding: 2.5rem 1.25rem 1rem 1rem;
-  min-height: 80vh;
 
   @include desktop {
-    width: 55%;
-
+    border-left: 16px solid #fecf0a;
+    width: 100%;
     justify-content: center;
   }
-
-  .title__container {
-    @include links;
-    background: black;
-    max-width: 50vw;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 37rem;
-    height: 5rem;
-    padding: 1.3rem;
-  }
-  .cards__container {
-    width: 50rem;
-    height: 28rem;
-  }
 }
 
-#towns-footer {
-  background-color: #de1f26;
-  width: 100%;
-}
-
-.choose {
+.title__container {
+  background: black;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  height: 5rem;
+  padding: 1.3rem;
+  margin-top: 1rem;
+}
+
+.choose-container {
+  display: flex;
+  padding-top: 8rem;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.town {
+  text-align: center;
   font-family: "Futura Std";
-  background: linear-gradient(
-    0deg,
-    #49669c,
-    #436da2,
-    #3d74a7,
-    #377bab,
-    #3181af,
-    #2d88b2,
-    #298eb4,
-    #2995b6,
-    #2b9bb7,
-    #30a1b8,
-    #37a7b8,
-    #40adb8
-  );
+  background: linear-gradient(0deg, #49669c, #436da2, #3d74a7, #377bab, #3181af, #2d88b2, #298eb4, #2995b6, #2b9bb7, #30a1b8, #37a7b8, #40adb8);
   margin: 1rem;
-  width: 40%;
-  position: relative;
+
   border-radius: 1rem;
   -webkit-box-shadow: 4px 3px 9px 4px rgba(0, 0, 0, 0.2);
   box-shadow: 4px 3px 9px 4px rgba(0, 0, 0, 0.2);
@@ -160,28 +131,16 @@
   animation-timing-function: ease-out;
   animation-iteration-count: infinite;
   &:hover {
-    background: linear-gradient(
-      0deg,
-      #559db5,
-      #4fa6bb,
-      #48aec0,
-      #43b7c4,
-      #3fc0c6,
-      #3fc8c7,
-      #43d1c6,
-      #4cd9c4
-    );
+    background: linear-gradient(0deg, #559db5, #4fa6bb, #48aec0, #43b7c4, #3fc0c6, #3fc8c7, #43d1c6, #4cd9c4);
     cursor: pointer;
     animation-name: bounce;
   }
-  &-container {
-    display: flex;
-    padding: 8rem 0 0;
-    flex-wrap: wrap;
-    justify-content: space-around;
+
+  @include tablet {
+    width: 40%;
   }
 }
 
-.button {
+.kanto {
   width: 89%;
 }

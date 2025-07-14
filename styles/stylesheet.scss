@@ -1,6 +1,7 @@
 @use "partials/typography" as *;
 @use "partials/partial" as *;
 @use "partials/mixins" as *;
+@use "partials/pokedex" as *;
 
 *,
 *::before,
@@ -8,6 +9,10 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
+  background: linear-gradient(0deg, #de1f26, #e02628);
 }
 
 h1,
@@ -46,21 +51,7 @@ a {
   font-size: 1rem;
 }
 .nav-bar {
-  background: linear-gradient(
-    0deg,
-    #de1f26,
-    #e02628,
-    #e12c2a,
-    #e3312c,
-    #e5372e,
-    #e63b30,
-    #e84032,
-    #ea4434,
-    #eb4836,
-    #ed4c39,
-    #ee503b,
-    #f0543d
-  );
+  background: linear-gradient(0deg, #de1f26, #e02628, #e12c2a, #e3312c, #e5372e, #e63b30, #e84032, #ea4434, #eb4836, #ed4c39, #ee503b, #f0543d);
   display: flex;
 
   padding-bottom: 2rem;
@@ -73,6 +64,8 @@ a {
     @extend .nav-bar;
     @include tablet {
       padding-bottom: 0;
+
+      flex-direction: column;
     }
   }
 
@@ -113,21 +106,19 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  font-family: "Futura Std";
   background-color: $poke-site-blue;
   margin: 1rem;
-  position: relative;
-
   @include tablet {
-    width: 30%;
+    width: 28%;
   }
 
   &__name {
     text-transform: uppercase;
-    font-size: 2.25rem;
+    font-size: 1.4rem;
     font-weight: 500;
     color: #fff;
+    @include tablet {
+    }
   }
   &__id {
     background-color: $poke-site-yellow;
@@ -135,25 +126,20 @@ a {
     font-size: 1.5rem;
     width: 2.5rem;
     height: 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 0;
-    right: 0;
   }
   &__type {
+    margin-bottom: 0.5rem;
     list-style: none;
     display: flex;
-
+    flex-wrap: wrap;
+    justify-content: center;
     color: $poke-site-yellow;
-
+    max-width: 90%;
     @include tablet {
-      font-size: 2.25rem;
+      font-size: 1.5rem;
     }
   }
   &__li {
-    margin: 0 1rem 1rem 0;
     text-transform: uppercase;
     text-align: center;
   }
@@ -165,5 +151,10 @@ a {
 }
 
 .cards__container {
-  max-width: 50vw;
+  @include tablet {
+    max-width: 80vw;
+  }
+  @include desktop {
+    max-width: 50vw;
+  }
 }

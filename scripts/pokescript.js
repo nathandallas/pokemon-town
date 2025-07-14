@@ -1,210 +1,111 @@
-function palletTownRender() {
-  let map = document.querySelector(".map-section");
-  map.style.backgroundImage = "url('../assets/images/PalletTownCrop-icon.png')";
-  let title = document.querySelector(".title-text");
-  title.innerText = "PALLET TOWN";
-  let allPokemonContainer = document.querySelector("#pokemon-container");
-  allPokemonContainer.innerText = "";
+// Map configuration
+const locations = {
+  "pallet-town": {
+    image: "../assets/images/PalletTownCrop-icon.png",
+    title: "PALLET TOWN",
+    pokemonIndex: [0, 3, 6, 12, 19, 21],
+  },
+  "viridian-city": {
+    image: "../assets/images/ViridianCityCrop-icon.png",
+    title: "VIRIDIAN CITY",
+    pokemonIndex: [13, 15, 9, 10, 14, 11],
+  },
+  "cerulean-city": {
+    image: "../assets/images/CeruleanCityCrop-icon.png",
+    title: "CERULEAN CITY",
+    pokemonIndex: [128, 97, 119, 115, 53, 78],
+  },
+  "pewter-city": {
+    image: "../assets/images/PewterCityCrop-icon.png",
+    title: "PEWTER CITY",
+    pokemonIndex: [34, 50, 28, 31, 43, 77],
+  },
+};
 
-  fetchPalletPokemon();
-}
-function viridianCityRender() {
-  let map = document.querySelector(".map-section");
-  map.style.backgroundImage =
-    "url('../assets/images/ViridianCityCrop-icon.png')";
-  let title = document.querySelector(".title-text");
-  title.innerText = "VIRIDIAN CITY";
-  let allPokemonContainer = document.querySelector("#pokemon-container");
-  allPokemonContainer.innerText = "";
+// Main render function
+function renderLocation(locationId) {
+  const location = locations[locationId];
+  if (!location) return;
 
-  fetchViridianPokemon();
-}
-function ceruleanCityRender() {
-  let map = document.querySelector(".map-section");
-  map.style.backgroundImage =
-    "url('../assets/images/CeruleanCityCrop-icon.png')";
-  let title = document.querySelector(".title-text");
-  title.innerText = "CERULEAN CITY";
-  let allPokemonContainer = document.querySelector("#pokemon-container");
-  allPokemonContainer.innerText = "";
+  document.querySelector(".map-crop").src = location.image;
+  document.querySelector(".title-text").innerText = location.title;
+  document.querySelector("#pokemon-container").innerText = "";
 
-  fetchCeruleanPokemon();
-}
-function pewterCityRender() {
-  let map = document.querySelector(".map-section");
-  map.style.backgroundImage = "url('../assets/images/PewterCityCrop-icon.png')";
-  let title = document.querySelector(".title-text");
-  title.innerText = "PEWTER CITY";
-  let allPokemonContainer = document.querySelector("#pokemon-container");
-  allPokemonContainer.innerText = "";
-
-  fetchPewterPokemon();
+  fetchLocationPokemon(location.pokemonIndex);
 }
 
-function fetchPalletPokemon() {
+// Fetch pokemon for a location
+function fetchLocationPokemon(index) {
   fetch(`https://pokeapi.co/api/v2/pokemon?limit=151`)
     .then(response => response.json())
-    .then(function (allpokemon) {
-      let palletArr = [
-        allpokemon.results[0],
-        allpokemon.results[3],
-        allpokemon.results[6],
-        allpokemon.results[12],
-        allpokemon.results[19],
-        allpokemon.results[21],
-      ];
-
-      palletArr.forEach(function (pokemon) {
-        fetchPokemonData(pokemon);
-      });
-    });
-}
-function fetchViridianPokemon() {
-  fetch(`https://pokeapi.co/api/v2/pokemon?limit=151`)
-    .then(response => response.json())
-    .then(function (allpokemon) {
-      let viridianArr = [
-        allpokemon.results[13],
-        allpokemon.results[15],
-        allpokemon.results[9],
-        allpokemon.results[10],
-        allpokemon.results[14],
-        allpokemon.results[11],
-      ];
-
-      viridianArr.forEach(function (pokemon) {
-        fetchPokemonData(pokemon);
-      });
-    });
-}
-function fetchCeruleanPokemon() {
-  fetch(`https://pokeapi.co/api/v2/pokemon?limit=151`)
-    .then(response => response.json())
-    .then(function (allpokemon) {
-      let ceruleanArr = [
-        allpokemon.results[128],
-        allpokemon.results[97],
-        allpokemon.results[119],
-        allpokemon.results[115],
-        allpokemon.results[53],
-        allpokemon.results[78],
-      ];
-
-      ceruleanArr.forEach(function (pokemon) {
-        fetchPokemonData(pokemon);
-      });
-    });
-}
-function fetchPewterPokemon() {
-  fetch(`https://pokeapi.co/api/v2/pokemon?limit=151`)
-    .then(response => response.json())
-    .then(function (allpokemon) {
-      let pewterArr = [
-        allpokemon.results[34],
-        allpokemon.results[50],
-        allpokemon.results[28],
-        allpokemon.results[31],
-        allpokemon.results[43],
-        allpokemon.results[77],
-      ];
-
-      pewterArr.forEach(function (pokemon) {
-        fetchPokemonData(pokemon);
-      });
+    .then(allpokemon => {
+      const pokemonList = index.map(index => allpokemon.results[index]);
+      pokemonList.forEach(pokemon => fetchPokemonData(pokemon));
     });
 }
 
+// Fetch and render individual pokemon data
 function fetchPokemonData(pokemon) {
-  let url = pokemon.url; // <--- this is saving the pokemon url to a variable to use in the fetch.
-  fetch(url)
+  fetch(pokemon.url)
     .then(response => response.json())
-    .then(function (pokemonData) {
-      renderPokemon(pokemonData);
-    });
+    .then(renderPokemon);
 }
 
+// Render pokemon card
 function renderPokemon(pokemonData) {
-  let allPokemonContainer = document.getElementById("pokemon-container");
-  let pokemonContainer = document.createElement("div");
-  pokemonContainer.classList.add("ui", "card");
+  const container = document.getElementById("pokemon-container");
+  const card = document.createElement("div");
+  card.classList.add("ui", "card");
 
-  createpokemonImage(pokemonData.id, pokemonContainer);
+  createpokemonImage(pokemonData.id, card);
 
-  // name of pokemon
-  let pokemonName = document.createElement("h4");
+  const pokemonName = document.createElement("h4");
   pokemonName.classList.add("card__name");
-  pokemonName.innerText = pokemonData.name;
+  pokemonName.textContent = pokemonData.name;
 
-  // pokemon ID
-  let pokemonID = document.createElement("p");
+  const pokemonID = document.createElement("p");
   pokemonID.classList.add("card__id");
-  pokemonID.innerText = `${pokemonData.id}`;
+  pokemonID.textContent = pokemonData.id;
 
-  // ul to hold pokemon types
-  let pokemonTypes = document.createElement("ul");
+  const pokemonTypes = document.createElement("ul");
   pokemonTypes.classList.add("card__type");
-
-  // go through the types array and create li tags for each one
   createTypes(pokemonData.types, pokemonTypes);
 
-  pokemonContainer.append(pokemonName, pokemonID, pokemonTypes);
-  allPokemonContainer.appendChild(pokemonContainer);
+  card.append(pokemonName, pokemonID, pokemonTypes);
+  container.appendChild(card);
 }
 
-// Creates a list for the pokemon types w 2 items
-
+// Helper functions
 function createTypes(types, ul) {
-  types.forEach(function (type) {
-    let typeList = document.createElement("li");
+  types.forEach(type => {
+    const typeList = document.createElement("li");
     typeList.classList.add("card__li");
-    typeList.innerText = type["type"]["name"];
+    typeList.textContent = type.type.name;
     ul.append(typeList);
   });
 }
 
-// This appends the relevant image to the card
-
 function createpokemonImage(pokemonID, containerDiv) {
-  let pokemonImageContainer = document.createElement("div");
+  const imgContainer = document.createElement("div");
+  const img = document.createElement("img");
+  img.classList.add("card__image");
+  img.srcset = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonID}.png`;
 
-  let pokemonImage = document.createElement("img");
-  pokemonImage.classList.add("card__image");
-  pokemonImage.srcset = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonID}.png`;
-
-  pokemonImageContainer.append(pokemonImage);
-  containerDiv.append(pokemonImageContainer);
+  imgContainer.append(img);
+  containerDiv.append(imgContainer);
 }
 
+// Event listeners
 document.addEventListener("DOMContentLoaded", () => {
-  const locationNav = document.querySelector(".pallet-town");
-  locationNav.addEventListener("click", palletTownRender);
-});
-document.addEventListener("DOMContentLoaded", () => {
-  const locationNav = document.querySelector(".viridian-city");
-  locationNav.addEventListener("click", viridianCityRender);
-});
-document.addEventListener("DOMContentLoaded", () => {
-  const locationNav = document.querySelector(".pewter-city");
-  locationNav.addEventListener("click", pewterCityRender);
-});
-document.addEventListener("DOMContentLoaded", () => {
-  const locationNav = document.querySelector(".cerulean-city");
-  locationNav.addEventListener("click", ceruleanCityRender);
-});
+  // Get all buttons with class 'location-button'
+  const locationButtons = document.querySelectorAll(".location-button");
 
-document.addEventListener("DOMContentLoaded", () => {
-  const locationNav = document.querySelector(".pallet-town-t");
-  locationNav.addEventListener("click", palletTownRender);
-});
-document.addEventListener("DOMContentLoaded", () => {
-  const locationNav = document.querySelector(".viridian-city-t");
-  locationNav.addEventListener("click", viridianCityRender);
-});
-document.addEventListener("DOMContentLoaded", () => {
-  const locationNav = document.querySelector(".pewter-city-t");
-  locationNav.addEventListener("click", pewterCityRender);
-});
-document.addEventListener("DOMContentLoaded", () => {
-  const locationNav = document.querySelector(".cerulean-city-t");
-  locationNav.addEventListener("click", ceruleanCityRender);
+  // Add click event to each button
+  locationButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      // Get the location class (last class in the list)
+      const locationClass = button.classList[button.classList.length - 1];
+      renderLocation(locationClass);
+    });
+  });
 });
