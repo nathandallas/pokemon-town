@@ -112,6 +112,290 @@
   margin: 0 auto;
 }
 
+@font-face {
+  font-family: "Futura Std";
+  src: url("../../assets/fonts/FuturaStd-Book.woff2") format("woff2"), url("../../assets/fonts/FuturaStd-Book.woff") format("woff");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Futura Std";
+  src: url("../../assets/fonts/FuturaStd-Bold.woff2") format("woff2"), url("../../assets/fonts/FuturaStd-Bold.woff") format("woff");
+  font-weight: 600;
+}
+@keyframes bounce {
+  0%, 100%, 20%, 50%, 80% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-8px);
+  }
+  60% {
+    transform: translateY(-4px);
+  }
+}
+#container {
+  background: linear-gradient(0deg, #de1f26, #e02628, #e12c2a, #e3312c, #e5372e, #e63b30, #e84032, #ea4434, #eb4836, #ed4c39, #ee503b, #f0543d);
+}
+
+.pokedex-header {
+  text-transform: uppercase;
+  text-align: center;
+  background-color: black;
+  padding: 1rem 0;
+  margin: auto;
+  color: #fff;
+  font-weight: 300;
+  font-size: 1.7rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .pokedex-header {
+    font-size: 3rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .pokedex-header {
+    font-size: 5rem;
+  }
+}
+#pokedex-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 98%;
+  justify-content: space-between;
+  background: linear-gradient(0deg, #de1f26, #e02628, #e12c2a, #e3312c, #e5372e, #e63b30, #e84032, #ea4434, #eb4836, #ed4c39, #ee503b, #f0543d);
+  padding-top: 2rem;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 1024px) {
+  #pokedex-container {
+    width: 80%;
+  }
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+  font-family: "Futura Std";
+  background: linear-gradient(0deg, #49669c, #436da2, #3d74a7, #377bab, #3181af, #2d88b2, #298eb4, #2995b6, #2b9bb7, #30a1b8, #37a7b8, #40adb8);
+  position: relative;
+  border-radius: 1rem 0 1rem 1rem;
+  box-shadow: 4px 3px 9px 4px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (min-width: 768px) {
+  .card {
+    width: 28%;
+  }
+}
+.card__name {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+.card__id {
+  background-color: #FECF0A;
+  font-size: 1.125rem;
+  color: #fff;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.card__type {
+  list-style: none;
+  display: flex;
+  font-size: 1.25rem;
+  color: #FECF0A;
+}
+
+.card__li {
+  margin: 0.5rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.card__image {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(0deg, #de1f26, #e02628);
+  font-family: "futura std", sans-serif;
+}
+
+.pika-icon {
+  margin: 1rem 1.5rem 0 1rem;
+  width: 3.5rem;
+  display: flex;
+  transform: rotate(340deg);
+}
+@media screen and (min-width: 768px) {
+  .pika-icon {
+    flex-wrap: wrap;
+    margin: 1rem 2.5rem 0 2.5rem;
+    width: 4rem;
+    animation-duration: 0.75s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+  }
+  .pika-icon:hover {
+    cursor: pointer;
+    animation-name: bounce;
+  }
+}
+
+a {
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.nav-bar, .nav-bar-towns {
+  background: linear-gradient(0deg, #de1f26, #e02628, #e12c2a, #e3312c, #e5372e, #e63b30, #e84032, #ea4434, #eb4836, #ed4c39, #ee503b, #f0543d);
+  display: flex;
+  padding-bottom: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .nav-bar, .nav-bar-towns {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (min-width: 768px) {
+  .nav-bar-towns {
+    padding-bottom: 0;
+    flex-direction: column;
+  }
+}
+.nav-bar__links {
+  display: flex;
+  letter-spacing: 0.25rem;
+  font-weight: 300;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 1.75rem 1rem 0 0;
+}
+@media screen and (min-width: 768px) {
+  .nav-bar__links {
+    margin: 1.75rem 3rem 0 0;
+    font-size: 2rem;
+  }
+}
+.nav-bar__links--box {
+  display: flex;
+}
+.nav-bar__links:hover {
+  color: #FECF0A;
+}
+
+.nav-bar__links--box a:link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav-bar__links--box a:visited {
+  text-decoration: none;
+  color: #fff;
+}
+
+#pokemon-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #40ADB8;
+  margin: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .card {
+    width: 28%;
+  }
+}
+.card__name {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #fff;
+}
+.card__id {
+  background-color: #FECF0A;
+  color: #fff;
+  font-size: 1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.card__type {
+  margin-bottom: 0.5rem;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: #FECF0A;
+  max-width: 90%;
+}
+@media screen and (min-width: 768px) {
+  .card__type {
+    font-size: 1.5rem;
+  }
+}
+.card__li {
+  text-transform: uppercase;
+  text-align: center;
+}
+.card__image {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .cards__container {
+    max-width: 80vw;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .cards__container {
+    max-width: 50vw;
+  }
+}
+
+.map {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+footer {
+  margin: 1rem auto;
+  text-align: center;
+}
+
 .sub-bar {
   border: none;
   display: none;
