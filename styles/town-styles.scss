@@ -46,13 +46,15 @@
   display: flex;
   flex-direction: column;
   @include desktop {
-    justify-content: space-between;
-
     flex-direction: row;
+    justify-content: space-between;
   }
 }
 
 .map-section {
+  @include tablet {
+    max-height: 40vh;
+  }
   @include desktop {
     width: 44vw;
   }
@@ -61,9 +63,12 @@
 .map-crop {
   height: 300px;
   object-fit: cover;
+  @include tablet {
+    min-height: 60vh;
+  }
   @include desktop {
     height: 90vh;
-    
+    width: 44vw;
     object-position: 25% 90%;
   }
 }
@@ -90,8 +95,9 @@
 
   @include desktop {
     border-left: 16px solid #fecf0a;
-    width: 100%;
     justify-content: center;
+    width: 55vw;
+    height: 90vh;
   }
 }
 
@@ -106,7 +112,7 @@
 
 .choose-container {
   display: flex;
-  padding-top: 8rem;
+  padding-top: 2rem;
   flex-wrap: wrap;
   justify-content: space-around;
 }
@@ -116,15 +122,15 @@
   font-family: "Futura Std";
   background: linear-gradient(0deg, #49669c, #436da2, #3d74a7, #377bab, #3181af, #2d88b2, #298eb4, #2995b6, #2b9bb7, #30a1b8, #37a7b8, #40adb8);
   margin: 1rem;
-
+  min-width: 275px;
   border-radius: 1rem;
   -webkit-box-shadow: 4px 3px 9px 4px rgba(0, 0, 0, 0.2);
   box-shadow: 4px 3px 9px 4px rgba(0, 0, 0, 0.2);
   border: none;
   color: #fff;
   text-transform: uppercase;
-  padding: 1rem 0;
-  font-size: 1.75rem;
+  padding: 1rem;
+  font-size: 1.5rem;
   letter-spacing: 0.25rem;
   animation-duration: 0.75s;
   animation-fill-mode: both;

@@ -122,16 +122,7 @@
 
 body {
   background: linear-gradient(0deg, #de1f26, #e02628);
-}
-
-h1,
-h2,
-h3,
-p,
-link,
-ul,
-li {
-  font-family: "futura std";
+  font-family: "futura std", sans-serif;
 }
 
 .pika-icon {
@@ -230,7 +221,7 @@ a {
 .card__name {
   text-transform: uppercase;
   font-size: 1.4rem;
-  font-weight: 500;
+  font-weight: 400;
   color: #fff;
 }
 .card__id {
@@ -273,4 +264,15 @@ a {
   .cards__container {
     max-width: 50vw;
   }
+}
+
+.map {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+footer {
+  margin: 1rem auto;
+  text-align: center;
 }/*# sourceMappingURL=stylesheet.css.map */
