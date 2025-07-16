@@ -42,7 +42,21 @@ a {
   font-size: 1rem;
 }
 .nav-bar {
-  background: linear-gradient(0deg, #de1f26, #e02628, #e12c2a, #e3312c, #e5372e, #e63b30, #e84032, #ea4434, #eb4836, #ed4c39, #ee503b, #f0543d);
+  background: linear-gradient(
+    0deg,
+    #de1f26,
+    #e02628,
+    #e12c2a,
+    #e3312c,
+    #e5372e,
+    #e63b30,
+    #e84032,
+    #ea4434,
+    #eb4836,
+    #ed4c39,
+    #ee503b,
+    #f0543d
+  );
   display: flex;
 
   padding-bottom: 2rem;
@@ -109,6 +123,7 @@ a {
     font-weight: 400;
     color: #fff;
     @include tablet {
+      font-size: 2rem;
     }
   }
   &__id {
@@ -158,4 +173,5 @@ a {
 footer {
   margin: 1rem auto;
   text-align: center;
+  color: white;
 }

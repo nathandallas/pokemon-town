@@ -78,7 +78,7 @@
 }
 .card__name {
   text-transform: uppercase;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 500;
   color: #fff;
 }
@@ -224,6 +224,11 @@ a {
   font-weight: 400;
   color: #fff;
 }
+@media screen and (min-width: 768px) {
+  .card__name {
+    font-size: 2rem;
+  }
+}
 .card__id {
   background-color: #FECF0A;
   color: #fff;
@@ -275,4 +280,5 @@ a {
 footer {
   margin: 1rem auto;
   text-align: center;
+  color: white;
 }/*# sourceMappingURL=stylesheet.css.map */
